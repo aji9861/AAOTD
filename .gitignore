@@ -18,3 +18,9 @@ local.properties
 # Eclipse project files
 .classpath
 .project
+
+# Gradle stuff
+*gradle*
+.idea/
+AAOTDFetcher/build/
+
