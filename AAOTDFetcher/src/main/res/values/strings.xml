@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name" >AAOTD Fetcher
+    </string>
+    <string name="action_settings" >Settings
+    </string>
+
+    <string name="amazon_app_url">http://www.amazon.com/mobile-apps/b/ref=sa_menu_adr_app4?ie=UTF8&amp;node=2350149011</string>
+    <string name="amazon_app_start_url">http://www.amazon.com/mobile-apps/b</string>;
+    <string name="amazon_sign_in_start_url">https://www.amazon.com/ap/signin</string>;
+    <string name="amazon_thanks_start_url">http://www.amazon.com/gp/mas/thank-you</string>;
+
+</resources>
