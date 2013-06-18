@@ -74,11 +74,13 @@ public class WebLoader extends AsyncTask<Void, Void, Void> {
                 if(previousUrl.startsWith(getString(R.string.amazon_sign_in_start_url))){
                     previousUrl = getString(R.string.amazon_sign_in_start_url);
                     Log.e("AAOTD", "Error logging in.");
+                    myActivity.getPreferences(Context.MODE_PRIVATE).edit().putString("password", "");
                 }else{
                     previousUrl = getString(R.string.amazon_sign_in_start_url);
                     view.loadUrl(JavascriptCalls.getJsSignInForm(username, password));
                 }
-            }else if (url.startsWith(getString(R.string.amazon_thanks_start_url))){
+            }else if (url.startsWith(getString(R.string.amazon_thanks_start_url)) ||
+                    url.startsWith(getString(R.string.amazon_thanks_start_ssl_url))){
                 previousUrl = getString(R.string.amazon_thanks_start_url);
                 view.loadUrl(JavascriptCalls.getJsFetchComplete());
             } else{

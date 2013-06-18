@@ -40,12 +40,12 @@ public class JavascriptCalls {
                         "detailsTitle=detailsResultElement.children[2].children[0].innerHTML;" +
                         "isNewPurchase=(detailsResultElement.innerHTML.indexOf('You now own:') >= 0);" +
 
-                        "if(isNewPurchase){" +
+                        "if(true || isNewPurchase){" +
                             "alert('image:' + detailsImageElement.src);" +
                             "alert('title:' + detailsTitle);" +
                             "alert('link:' + detailsLinkElement.href);" +
                         "}" +
                     "}";
     }
-
+// TODO: Remove the "true ||" above
 }

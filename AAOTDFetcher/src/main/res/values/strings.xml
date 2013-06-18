@@ -10,5 +10,6 @@
     <string name="amazon_app_start_url">http://www.amazon.com/mobile-apps/b</string>;
     <string name="amazon_sign_in_start_url">https://www.amazon.com/ap/signin</string>;
     <string name="amazon_thanks_start_url">http://www.amazon.com/gp/mas/thank-you</string>;
+    <string name="amazon_thanks_start_ssl_url">https://www.amazon.com/gp/mas/thank-you</string>;
 
 </resources>

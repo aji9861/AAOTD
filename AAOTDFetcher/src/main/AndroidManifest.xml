@@ -23,5 +23,6 @@
             </intent-filter>
         </activity>
     </application>
+    <service android:enabled="true" android:name="com.runnirr.aaotdfetcher.AAOTDService" />
     <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

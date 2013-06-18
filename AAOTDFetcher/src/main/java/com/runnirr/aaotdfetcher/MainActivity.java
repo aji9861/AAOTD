@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
@@ -18,8 +19,18 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         Log.d("AAOTD", "started");
+        promptIfNeeded();
+    }
 
-        promptUsername();
+    void promptIfNeeded(){
+        SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+        String username = prefs.getString("username", null);
+        String password = prefs.getString("password", null);
+        if(username == null || username.isEmpty() || password == null || password.isEmpty()) {
+            promptUsername();
+        }else{
+            runFetcher();
+        }
     }
 
     void promptUsername(){
@@ -43,6 +54,11 @@ public class MainActivity extends Activity {
         final EditText passwordField = (EditText) inputPanel.findViewById(R.id.passwordField);
 
         final SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
+        String storedUser = sharedPreferences.getString("username", null);
+        if(storedUser != null){
+            emailField.setText(storedUser, TextView.BufferType.EDITABLE);
+            passwordField.requestFocus();
+        }
 
         alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
